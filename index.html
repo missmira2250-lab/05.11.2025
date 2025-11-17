@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Серебряный век — Символизм</title>
 <style>
   body {
@@ -12,19 +12,6 @@
     background: #0a0a0a;
     color: #e5e5e5;
     position: relative;
-  }
-
-  body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background: url('https://i.imgur.com/8fK4h6X.png');
-    opacity: 0.08;
-    mix-blend-mode: screen;
   }
 
   header {
@@ -51,6 +38,7 @@
     gap: 15px;
     flex-wrap: wrap;
   }
+
   .btn {
     text-decoration: none;
     padding: 12px 20px;
@@ -118,77 +106,93 @@
 
   footer { text-align: center; padding: 20px; color: #666; }
 
+  .nightmode { background: #050505; color: #c1c1c1; }
 </style>
 </head>
 <body>
-  <header>
-    <h1>Серебряный век — Символизм</h1>
-    <nav>
-      <a class="btn" href="#intro">Введение</a>
-      <a class="btn" href="#old">Старшие символисты</a>
-      <a class="btn" href="#young">Младшие символисты</a>
-      <a class="btn" href="#art">Синтез искусств</a>
-      <a class="btn" href="#quotes">Цитаты</a>
-      <button class="btn" onclick="openModal()">О движении</button>
-    </nav>
-  </header>
+<header>
+  <h1>Серебряный век — Символизм</h1>
+  <nav>
+    <a class="btn" href="#intro">Введение</a>
+    <a class="btn" href="#old">Старшие символисты</a>
+    <a class="btn" href="#young">Младшие символисты</a>
+    <a class="btn" href="#art">Синтез искусств</a>
+    <a class="btn" href="#quotes">Цитаты</a>
+    <button class="btn" onclick="openModal('movement')">О движении</button>
+    <button class="btn" onclick="toggleNight()">Ночь/Ночь поглубже</button>
+  </nav>
+</header>
 
-  <section id="intro">
-    <h2>Введение</h2>
-    <p>Символизм — первый мощный художественный всплеск XX века, стремление открыть скрытые уровни реальности с помощью многозначного символа. Мир понимался как текст, полный тайн и знаков.</p>
-  </section>
+<section id="intro">
+  <h2>Введение</h2>
+  <p>Символизм на рубеже XIX–XX веков стал реакцией на материализм и реализм. Символисты искали тайны в словах, музыке, живописи, создавая мистический и декаденский мир.</p>
+</section>
 
-  <section id="old">
-    <h2>Старшие символисты</h2>
-    <p>Брюсов, Мережковский, Гиппиус, Бальмонт — основатели направления, создавшие культ творческой личности и особую музыкальность стиха.</p>
-    <div style="text-align:center; margin-top:20px;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Andrei_Bely_in_Brussels_%281912%29.jpg" style="max-width:350px;height:284px;margin:0;width:190px;border:2px solid #8b0000;" alt="Андрей Белый — Википедия">
-    </div>
-  </section>
-
-  <section id="young">
-    <h2>Младшие символисты</h2>
-    <p>Блок, Белый и Иванов увидели историю как мистерию и верили в грядущее преображение мира. Женский образ стал центральным символом движения.</p>
-    <div style="text-align:center; margin-top:20px;">
-      <img src="https://russkiymir.ru/upload/medialibrary/cc5/cc50403c909999582a3c5a16582d87aa.jpg" style="max-width:668px;height:528px;margin:0;width:344px;border:2px solid #8b0000;" alt="Александр Блок. Штрихи к портрету">
-    </div>
-  </section>
-
-  <section id="art">
-    <h2>Музыка, живопись и синтез искусств</h2>
-    <p>Скрябин мечтал о мистическом синтетическом действе — соединении света, звука и движения. Врубель в живописи создал образы демонической красоты, ставшие символом эпохи.</p>
-
-    <div class="gallery">
-      <img src="https://www.mosconsv.ru/museum/images/236.jpg" style="max-width:400px;height:390px;margin:0;width:273px;border:2px solid #8b0000;" alt="Александр Николаевич Скрябин" onclick="showImg(this.src)">
-      <img src="https://24smi.org/public/media/celebrity/2023/03/17/cam4ugdgupgf-mikhail-vrubel.jpg" style="max-width:400px;height:416px;margin:0;width:312px;border:2px solid #8b0000;" alt="Михаил Врубель — биография" onclick="showImg(this.src)">
-      <img src="https://russkiymir.ru/upload/medialibrary/cc5/cc50403c909999582a3c5a16582d87aa.jpg" style="max-width:668px;height:528px;margin:0;width:344px;border:2px solid #8b0000;" alt="Александр Блок. Штрихи к портрету" onclick="showImg(this.src)">
-    </div>
-  </section>
-
-  <section id="quotes">
-    <h2>Цитаты символистов</h2>
-    <p><i>«Ночь, улица, фонарь, аптека...»</i> — Блок</p>
-    <p><i>«Мир как символ, мир как знак»</i> — Белый</p>
-    <p><i>«Искусство должно быть таинственным»</i> — Брюсов</p>
-  </section>
-
-  <!-- Модальное окно о движении -->
-  <div class="modal-bg" id="modalBg">
-    <div class="modal">
-      <h2>Что такое символизм?</h2>
-      <p>Символизм стремился раскрыть скрытую структуру бытия. Каждый предмет, звук и образ рассматривались как знак другого мира. Художник — посредник между видимым и невидимым.</p>
-      <button class="btn" onclick="closeModal()">Закрыть</button>
-    </div>
+<section id="old">
+  <h2>Старшие символисты</h2>
+  <p>Брюсов, Мережковский, Гиппиус, Бальмонт. Они создали культ «Я», музыкальность стиха, философскую глубину и стремление к мистической истине.</p>
+  <button class="btn" onclick="openModal('bely')">Биография Белого</button>
+  <div style="text-align:center; margin-top:20px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Andrei_Bely_in_Brussels_%281912%29.jpg" style="max-width:350px;height:284px;margin:0;width:190px;border:2px solid #8b0000;" alt="Андрей Белый" onclick="showImg(this.src)">
   </div>
+</section>
 
-  <!-- Модал для изображений -->
-  <div class="modal-bg" id="imgModal" onclick="closeImg()">
-    <img id="imgModalPic" src="" alt="preview">
+<section id="young">
+  <h2>Младшие символисты</h2>
+  <p>Блок, Белый, Иванов. Их поэзия обращена к мистике, грядущей Вечной Женщине, гармонии мира и символам трансцендентного.</p>
+  <button class="btn" onclick="openModal('blok')">Биография Блока</button>
+  <div style="text-align:center; margin-top:20px;">
+    <img src="https://russkiymir.ru/upload/medialibrary/cc5/cc50403c909999582a3c5a16582d87aa.jpg" style="max-width:668px;height:528px;margin:0;width:344px;border:2px solid #8b0000;" alt="Александр Блок" onclick="showImg(this.src)">
   </div>
+</section>
 
-  <footer>
-    <p>Сайт о Серебряном веке — нуар, символы, декаданс.</p>
-  </footer>
+<section id="art">
+  <h2>Синтез искусств</h2>
+  <p>Скрябин, Врубель, Чюрленис стремились к слиянию музыки, света и живописи. Музыкальные цвета, световые аккорды, мистическая символика — ключи эпохи.</p>
+  <button class="btn" onclick="openModal('skryabin')">Биография Скрябина</button>
+  <button class="btn" onclick="openModal('vrubel')">Биография Врубеля</button>
+  <div class="gallery">
+    <img src="https://www.mosconsv.ru/museum/images/236.jpg" style="max-width:400px;height:390px;margin:0;width:273px;border:2px solid #8b0000;" alt="Скрябин" onclick="showImg(this.src)">
+    <img src="https://24smi.org/public/media/celebrity/2023/03/17/cam4ugdgupgf-mikhail-vrubel.jpg" style="max-width:400px;height:416px;margin:0;width:312px;border:2px solid #8b0000;" alt="Врубель" onclick="showImg(this.src)">
+  </div>
+</section>
+
+<section id="quotes">
+  <h2>Цитаты символистов</h2>
+  <p><i>«Ночь, улица, фонарь, аптека...»</i> — Блок</p>
+  <p><i>«Мир как символ, мир как знак»</i> — Белый</p>
+  <p><i>«Искусство должно быть таинственным»</i> — Брюсов</p>
+</section>
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<div class="modal-bg" id="imgModal" onclick="closeImg()">
+  <img id="imgModalPic" src="" alt="preview">
+</div>
+
+<footer>
+  <p>Сайт о Серебряном веке — нуар, символы, декаданс.</p>
+</footer>
 
 <script>
-function open
+function openModal(person) {
+  const modal = document.getElementById('modalBg');
+  const content = document.getElementById('modalContent');
+  let html = '';
+  if(person==='movement') html=`<h2>Символизм</h2><p>Движение искало тайны в словах, музыке, живописи, соединяя мир видимого и невидимого.</p><button class='btn' onclick='closeModal()'>Закрыть</button>`;
+  if(person==='bely') html=`<h2>Андрей Белый</h2><p>Поэт, прозаик, философ. Создал теорию символа и мистическую прозу-синфонии.</p><button class='btn' onclick='closeModal()'>Закрыть</button>`;
+  if(person==='blok') html=`<h2>Александр Блок</h2><p>Поэт, «Вечная Жена», мистический символизм, соединение музыки и света.</p><button class='btn' onclick='closeModal()'>Закрыть</button>`;
+  if(person==='skryabin') html=`<h2>Александр Скрябин</h2><p>Композитор, мистическая музыка, светомузыка, «Прометей», «Поэма экстаза».</p><button class='btn' onclick='closeModal()'>Закрыть</button>`;
+  if(person==='vrubel') html=`<h2>Михаил Врубель</h2><p>Художник, символика цвета и формы, демоническая эстетика, мистический реализм.</p><button class='btn' onclick='closeModal()'>Закрыть</button>`;
+  content.innerHTML = html;
+  modal.style.display='flex';
+}
+function closeModal() { document.getElementById('modalBg').style.display='none'; }
+function showImg(src) { document.getElementById('imgModalPic').src = src; document.getElementById('imgModal').style.display='flex'; }
+function closeImg() { document.getElementById('imgModal').style.display='none'; }
+function toggleNight() { document.body.classList.toggle('nightmode'); }
+</script>
+</body>
+</html>

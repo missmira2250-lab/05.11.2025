@@ -11,20 +11,39 @@
     font-family: "Georgia", serif;
     background: #0a0a0a;
     color: #e5e5e5;
+    position: relative;
   }
+
+  /* НУАР‑зерно */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: url('https://i.imgur.com/8fK4h6X.png');
+    opacity: 0.08;
+    mix-blend-mode: screen;
+  }
+
   header {
     background: #000;
     border-bottom: 2px solid #8b0000;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
   }
   h1 {
     margin: 0;
     font-size: 2.5rem;
-    color: #e5e5e5;
     letter-spacing: 2px;
     text-shadow: 0 0 10px #8b0000;
   }
+
   nav {
     margin-top: 20px;
     display: flex;
@@ -38,13 +57,10 @@
     border: 1px solid #8b0000;
     color: #e5e5e5;
     transition: 0.3s;
-    font-size: 1rem;
     background: #111;
   }
-  .btn:hover {
-    background: #8b0000;
-    color: white;
-  }
+  .btn:hover { background: #8b0000; }
+
   section {
     max-width: 900px;
     margin: 40px auto;
@@ -53,16 +69,39 @@
     border-left: 3px solid #8b0000;
     border-right: 3px solid #8b0000;
   }
-  h2 {
-    color: #cfcfcf;
-    border-bottom: 1px solid #8b0000;
-    padding-bottom: 8px;
+
+  h2 { border-bottom: 1px solid #8b0000; padding-bottom: 8px; }
+
+  .gallery {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 0;
   }
-  footer {
-    text-align: center;
+  .gallery img {
+    height: 260px;
+    border: 2px solid #8b0000;
+  }
+
+  /* Модал */
+  .modal-bg {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  .modal {
+    background: #111;
     padding: 20px;
-    color: #666;
+    border: 2px solid #8b0000;
+    max-width: 600px;
   }
+
+  footer { text-align: center; padding: 20px; color: #666; }
 </style>
 </head>
 <body>
@@ -72,38 +111,63 @@
       <a class="btn" href="#intro">Введение</a>
       <a class="btn" href="#old">Старшие символисты</a>
       <a class="btn" href="#young">Младшие символисты</a>
-      <a class="btn" href="#art">Художники и музыка</a>
-      <a class="btn" href="#end">Закат движения</a>
+      <a class="btn" href="#art">Синтез искусств</a>
+      <a class="btn" href="#quotes">Цитаты</a>
+      <button class="btn" onclick="openModal()">О движении</button>
     </nav>
   </header>
 
   <section id="intro">
     <h2>Введение</h2>
-    <p>Анна Ахматова признаёт символизм «последним великим направлением». Движение возникло как протест против реализма, стремясь открыть доступ к тайне мира через «символ» — многозначный знак, намёк, мистическое ощущение.</p>
+    <p>Символизм стал первым мощным художественным направлением XX века в России. Он стремился проникнуть под поверхность реальности, открыть скрытые закономерности бытия и выразить их через многозначный символ.</p>
   </section>
 
   <section id="old">
     <h2>Старшие символисты</h2>
-    <p>Брюсов, Мережковский, Гиппиус и Бальмонт создавали культ «я», считая внутренний мир источником всего сущего. Субъективизм, заклинательная поэтика, музыкальность строки — их ключевые принципы.</p>
+    <p>Брюсов, Мережковский, Гиппиус и Бальмонт заложили канон: культ индивидуальности, музыка слова, магическое слово как ключ к тайне мира.</p>
+    <div style="text-align:center; margin-top:20px;"><img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Andrei_Bely_in_Brussels_%281912%29.jpg" alt="Андрей Белый" style="width:260px; border:2px solid #8b0000;" /></div>
   </section>
 
   <section id="young">
     <h2>Младшие символисты</h2>
-    <p>Блок, Белый, Иванов перенесли внимание от внутреннего мира к метафизическому пространству. Они ждали явления Вечной Женственности, читали знаки в каждом слове и предчувствовали мировые перемены.</p>
+    <p>Блок, Белый, Иванов — поэты мистического ожидания. Они видели историю как мистерию, а женщину — как проводницу к идеалу.</p>
+    <div style="text-align:center; margin-top:20px;"><img src="https://russkiymir.ru/upload/medialibrary/cc5/cc50403c909999582a3c5a16582d87aa.jpg" alt="Александр Блок" style="width:300px; border:2px solid #8b0000;" /></div>
   </section>
 
   <section id="art">
     <h2>Музыка, живопись и синтез искусств</h2>
-    <p>Скрябин стремился к мистическому синтезу — цвет, звук и философия объединялись в единый космогонический акт. Врубель создал визуальный миф символизма — его «Демон» стал символом эпохи.</p>
+    <p>Скрябин мечтал о синтетическом искусстве — мистическом действе, объединяющем звук, свет и движение. Врубель создал демоническую и пронзительную эстетику, ставшую символом эпохи.</p>
+
+    <div class="gallery">
+      <img src="https://www.mosconsv.ru/museum/images/236.jpg" alt="Скрябин">
+      <img src="https://24smi.org/public/media/celebrity/2023/03/17/cam4ugdgupgf-mikhail-vrubel.jpg" alt="Врубель">
+      <img src="https://russkiymir.ru/upload/medialibrary/cc5/cc50403c909999582a3c5a16582d87aa.jpg" alt="Блок">
+    </div>
   </section>
 
-  <section id="end">
-    <h2>Закат движения</h2>
-    <p>После 1910-х разочарования и революция разрушили движение, но его влияние сохранилось: в авангарде, музыке Стравинского, поэзии Пастернака и живописи Кандинского.</p>
+  <section id="quotes">
+    <h2>Цитаты символистов</h2>
+    <p><i>«Ночь, улица, фонарь, аптека...»</i> — Блок</p>
+    <p><i>«Мир как символ, мир как знак»</i> — Белый</p>
+    <p><i>«Искусство должно быть таинственным»</i> — Брюсов</p>
   </section>
+
+  <!-- МОДАЛ БЛОК -->
+  <div class="modal-bg" id="modalBg">
+    <div class="modal">
+      <h2>Что такое символизм?</h2>
+      <p>Символизм — это попытка передать неизъяснимое. Знак, запах, взгляд, звук — всё становится вратами в подлинную реальность. Художник же становится медиатором между видимым и скрытым.</p>
+      <button class="btn" onclick="closeModal()">Закрыть</button>
+    </div>
+  </div>
 
   <footer>
-    <p>Сайт о Серебряном веке — нуар-декор, символизм, декаданс.</p>
+    <p>Сайт о Серебряном веке — нуар, символы, декаданс.</p>
   </footer>
+
+  <script>
+    function openModal(){ document.getElementById('modalBg').style.display='flex'; }
+    function closeModal(){ document.getElementById('modalBg').style.display='none'; }
+  </script>
 </body>
 </html>

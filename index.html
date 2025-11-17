@@ -14,7 +14,6 @@
     position: relative;
   }
 
-  /* НУАР‑зерно */
   body::after {
     content: "";
     position: fixed;
@@ -37,11 +36,12 @@
     top: 0;
     z-index: 10;
   }
+
   h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     letter-spacing: 2px;
-    text-shadow: 0 0 10px #8b0000;
+    text-shadow: 0 0 12px #8b0000;
   }
 
   nav {
@@ -58,16 +58,23 @@
     color: #e5e5e5;
     transition: 0.3s;
     background: #111;
+    cursor: pointer;
   }
   .btn:hover { background: #8b0000; }
 
   section {
     max-width: 900px;
     margin: 40px auto;
-    padding: 20px 30px;
+    padding: 25px 30px;
     background: #111;
     border-left: 3px solid #8b0000;
     border-right: 3px solid #8b0000;
+    animation: fade 1s ease;
+  }
+
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   h2 { border-bottom: 1px solid #8b0000; padding-bottom: 8px; }
@@ -78,18 +85,20 @@
     overflow-x: auto;
     padding: 10px 0;
   }
-  .gallery img {
-    height: 260px;
-    border: 2px solid #8b0000;
-  }
 
-  /* Модал */
+  .gallery img {
+    border: 2px solid #8b0000;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .gallery img:hover { transform: scale(1.05); }
+
   .modal-bg {
     display: none;
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.85);
     justify-content: center;
     align-items: center;
     z-index: 100;
@@ -101,7 +110,14 @@
     max-width: 600px;
   }
 
+  #imgModal img {
+    max-width: 90vw;
+    max-height: 80vh;
+    border: 3px solid #8b0000;
+  }
+
   footer { text-align: center; padding: 20px; color: #666; }
+
 </style>
 </head>
 <body>
@@ -119,29 +135,33 @@
 
   <section id="intro">
     <h2>Введение</h2>
-    <p>Символизм стал первым мощным художественным направлением XX века в России. Он стремился проникнуть под поверхность реальности, открыть скрытые закономерности бытия и выразить их через многозначный символ.</p>
+    <p>Символизм — первый мощный художественный всплеск XX века, стремление открыть скрытые уровни реальности с помощью многозначного символа. Мир понимался как текст, полный тайн и знаков.</p>
   </section>
 
   <section id="old">
     <h2>Старшие символисты</h2>
-    <p>Брюсов, Мережковский, Гиппиус и Бальмонт заложили канон: культ индивидуальности, музыка слова, магическое слово как ключ к тайне мира.</p>
-    <div style="text-align:center; margin-top:20px;"><img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Andrei_Bely_in_Brussels_%281912%29.jpg" alt="Андрей Белый" style="width:260px; border:2px solid #8b0000;" /></div>
+    <p>Брюсов, Мережковский, Гиппиус, Бальмонт — основатели направления, создавшие культ творческой личности и особую музыкальность стиха.</p>
+    <div style="text-align:center; margin-top:20px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Andrei_Bely_in_Brussels_%281912%29.jpg" style="max-width:350px;height:284px;margin:0;width:190px;border:2px solid #8b0000;" alt="Андрей Белый — Википедия">
+    </div>
   </section>
 
   <section id="young">
     <h2>Младшие символисты</h2>
-    <p>Блок, Белый, Иванов — поэты мистического ожидания. Они видели историю как мистерию, а женщину — как проводницу к идеалу.</p>
-    <div style="text-align:center; margin-top:20px;"><img src="https://russkiymir.ru/upload/medialibrary/cc5/cc50403c909999582a3c5a16582d87aa.jpg" alt="Александр Блок" style="width:300px; border:2px solid #8b0000;" /></div>
+    <p>Блок, Белый и Иванов увидели историю как мистерию и верили в грядущее преображение мира. Женский образ стал центральным символом движения.</p>
+    <div style="text-align:center; margin-top:20px;">
+      <img src="https://russkiymir.ru/upload/medialibrary/cc5/cc50403c909999582a3c5a16582d87aa.jpg" style="max-width:668px;height:528px;margin:0;width:344px;border:2px solid #8b0000;" alt="Александр Блок. Штрихи к портрету">
+    </div>
   </section>
 
   <section id="art">
     <h2>Музыка, живопись и синтез искусств</h2>
-    <p>Скрябин мечтал о синтетическом искусстве — мистическом действе, объединяющем звук, свет и движение. Врубель создал демоническую и пронзительную эстетику, ставшую символом эпохи.</p>
+    <p>Скрябин мечтал о мистическом синтетическом действе — соединении света, звука и движения. Врубель в живописи создал образы демонической красоты, ставшие символом эпохи.</p>
 
     <div class="gallery">
-      <img src="https://www.mosconsv.ru/museum/images/236.jpg" alt="Скрябин">
-      <img src="https://24smi.org/public/media/celebrity/2023/03/17/cam4ugdgupgf-mikhail-vrubel.jpg" alt="Врубель">
-      <img src="https://russkiymir.ru/upload/medialibrary/cc5/cc50403c909999582a3c5a16582d87aa.jpg" alt="Блок">
+      <img src="https://www.mosconsv.ru/museum/images/236.jpg" style="max-width:400px;height:390px;margin:0;width:273px;border:2px solid #8b0000;" alt="Александр Николаевич Скрябин" onclick="showImg(this.src)">
+      <img src="https://24smi.org/public/media/celebrity/2023/03/17/cam4ugdgupgf-mikhail-vrubel.jpg" style="max-width:400px;height:416px;margin:0;width:312px;border:2px solid #8b0000;" alt="Михаил Врубель — биография" onclick="showImg(this.src)">
+      <img src="https://russkiymir.ru/upload/medialibrary/cc5/cc50403c909999582a3c5a16582d87aa.jpg" style="max-width:668px;height:528px;margin:0;width:344px;border:2px solid #8b0000;" alt="Александр Блок. Штрихи к портрету" onclick="showImg(this.src)">
     </div>
   </section>
 
@@ -152,22 +172,23 @@
     <p><i>«Искусство должно быть таинственным»</i> — Брюсов</p>
   </section>
 
-  <!-- МОДАЛ БЛОК -->
+  <!-- Модальное окно о движении -->
   <div class="modal-bg" id="modalBg">
     <div class="modal">
       <h2>Что такое символизм?</h2>
-      <p>Символизм — это попытка передать неизъяснимое. Знак, запах, взгляд, звук — всё становится вратами в подлинную реальность. Художник же становится медиатором между видимым и скрытым.</p>
+      <p>Символизм стремился раскрыть скрытую структуру бытия. Каждый предмет, звук и образ рассматривались как знак другого мира. Художник — посредник между видимым и невидимым.</p>
       <button class="btn" onclick="closeModal()">Закрыть</button>
     </div>
+  </div>
+
+  <!-- Модал для изображений -->
+  <div class="modal-bg" id="imgModal" onclick="closeImg()">
+    <img id="imgModalPic" src="" alt="preview">
   </div>
 
   <footer>
     <p>Сайт о Серебряном веке — нуар, символы, декаданс.</p>
   </footer>
 
-  <script>
-    function openModal(){ document.getElementById('modalBg').style.display='flex'; }
-    function closeModal(){ document.getElementById('modalBg').style.display='none'; }
-  </script>
-</body>
-</html>
+<script>
+function open

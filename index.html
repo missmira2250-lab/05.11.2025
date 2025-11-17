@@ -1,83 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Серебряный век — декаденский ноар</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    body{margin:0;padding:0;font-family:Montserrat;background:#111;color:#f1f1f1;line-height:1.6}
-    .container{max-width:900px;margin:auto;padding:20px}
-    h1,h2{font-family:'Playfair Display',serif;color:#fff;margin-top:0}
-    header{padding:20px 0;border-bottom:1px solid #333}
-    section{padding:20px 0;border-bottom:1px solid #222}
-    a{color:#e33}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:10px}
-    .tile{background:#1a1a1a;padding:20px;border-radius:6px;text-align:center;color:#aaa}
-    button{background:#e33;color:#fff;border:0;padding:8px 14px;border-radius:6px;cursor:pointer}
-    footer{padding:20px 0;color:#888;text-align:center;font-size:14px}
-    /* Simplified modal */
-    #modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);align-items:center;justify-content:center}
-    #modal.open{display:flex}
-    #modal .box{background:#181818;padding:20px;border-radius:8px;max-width:500px}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Серебряный век — Символизм</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Georgia", serif;
+    background: #0a0a0a;
+    color: #e5e5e5;
+  }
+  header {
+    background: #000;
+    border-bottom: 2px solid #8b0000;
+    padding: 20px;
+    text-align: center;
+  }
+  h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #e5e5e5;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #8b0000;
+  }
+  nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    text-decoration: none;
+    padding: 12px 20px;
+    border: 1px solid #8b0000;
+    color: #e5e5e5;
+    transition: 0.3s;
+    font-size: 1rem;
+    background: #111;
+  }
+  .btn:hover {
+    background: #8b0000;
+    color: white;
+  }
+  section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px 30px;
+    background: #111;
+    border-left: 3px solid #8b0000;
+    border-right: 3px solid #8b0000;
+  }
+  h2 {
+    color: #cfcfcf;
+    border-bottom: 1px solid #8b0000;
+    padding-bottom: 8px;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Серебряный век — Символизм и декаданс</h1>
-      <p>Упрощённая стабильная версия страницы без падений разметки.</p>
-      <button id="open-quote">Цитата эпохи</button>
-    </header>
+  <header>
+    <h1>Серебряный век — Символизм</h1>
+    <nav>
+      <a class="btn" href="#intro">Введение</a>
+      <a class="btn" href="#old">Старшие символисты</a>
+      <a class="btn" href="#young">Младшие символисты</a>
+      <a class="btn" href="#art">Художники и музыка</a>
+      <a class="btn" href="#end">Закат движения</a>
+    </nav>
+  </header>
 
-    <section id="about">
-      <h2>О символизме</h2>
-      <p>Символизм — одно из ключевых художественных направлений рубежа XIX–XX века. Он стремился выразить невыразимое через намёк, образ и тайну.</p>
-    </section>
+  <section id="intro">
+    <h2>Введение</h2>
+    <p>Анна Ахматова признаёт символизм «последним великим направлением». Движение возникло как протест против реализма, стремясь открыть доступ к тайне мира через «символ» — многозначный знак, намёк, мистическое ощущение.</p>
+  </section>
 
-    <section id="figures">
-      <h2>Ключевые фигуры</h2>
-      <ul>
-        <li>Александр Блок</li>
-        <li>Андрей Белый</li>
-        <li>Александр Скрябин</li>
-        <li>Михаил Врубель</li>
-      </ul>
-    </section>
+  <section id="old">
+    <h2>Старшие символисты</h2>
+    <p>Брюсов, Мережковский, Гиппиус и Бальмонт создавали культ «я», считая внутренний мир источником всего сущего. Субъективизм, заклинательная поэтика, музыкальность строки — их ключевые принципы.</p>
+  </section>
 
-    <section id="gallery">
-      <h2>Галерея</h2>
-      <div class="gallery">
-        <div class="tile">Врубель</div>
-        <div class="tile">Скрябин</div>
-        <div class="tile">Чюрленис</div>
-      </div>
-    </section>
+  <section id="young">
+    <h2>Младшие символисты</h2>
+    <p>Блок, Белый, Иванов перенесли внимание от внутреннего мира к метафизическому пространству. Они ждали явления Вечной Женственности, читали знаки в каждом слове и предчувствовали мировые перемены.</p>
+  </section>
 
-    <section id="timeline">
-      <h2>Краткая хронология</h2>
-      <ul>
-        <li>1890-е — возникновение символизма.</li>
-        <li>1900–1910-е — расцвет движения.</li>
-        <li>1910 — смерть Врубеля.</li>
-        <li>1917 — спад и трансформация направления.</li>
-      </ul>
-    </section>
+  <section id="art">
+    <h2>Музыка, живопись и синтез искусств</h2>
+    <p>Скрябин стремился к мистическому синтезу — цвет, звук и философия объединялись в единый космогонический акт. Врубель создал визуальный миф символизма — его «Демон» стал символом эпохи.</p>
+  </section>
 
-    <footer>© Серебряный век — упрощённая версия</footer>
-  </div>
+  <section id="end">
+    <h2>Закат движения</h2>
+    <p>После 1910-х разочарования и революция разрушили движение, но его влияние сохранилось: в авангарде, музыке Стравинского, поэзии Пастернака и живописи Кандинского.</p>
+  </section>
 
-  <div id="modal">
-    <div class="box">
-      <p><i>«Весь мир для символистов — язык тайных знаков.»</i></p>
-      <button id="close-modal">Закрыть</button>
-    </div>
-  </div>
-
-  <script>
-    const modal=document.getElementById('modal');
-    document.getElementById('open-quote').onclick=()=>modal.classList.add('open');
-    document.getElementById('close-modal').onclick=()=>modal.classList.remove('open');
-  </script>
+  <footer>
+    <p>Сайт о Серебряном веке — нуар-декор, символизм, декаданс.</p>
+  </footer>
 </body>
 </html>

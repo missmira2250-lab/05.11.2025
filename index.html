@@ -4,6 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Серебряный век — Символизм</title>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js");
+
+    ym(105407884, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/105407884" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
 <style>
   body {
     margin: 0;
@@ -104,12 +122,12 @@
     border: 3px solid #8b0000;
   }
 
-  footer { text-align: center; padding: 20px; color: #666; } <a href="https://missmira2250-lab.github.io/05.11.2025/" target="_blank">
-    Сайт о Серебряном веке
-</a>
+  footer { text-align: center; padding: 20px; color: #666; }
+
   .nightmode { background: #050505; color: #c1c1c1; }
 </style>
 </head>
+
 <body>
 <header>
   <h1>Серебряный век — Символизм</h1>
@@ -134,7 +152,7 @@
   <p>Брюсов, Мережковский, Гиппиус, Бальмонт. Они создали культ «Я», музыкальность стиха, философскую глубину и стремление к мистической истине.</p>
   <button class="btn" onclick="openModal('bely')">Биография Белого</button>
   <div style="text-align:center; margin-top:20px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Andrei_Bely_in_Brussels_%281912%29.jpg" style="max-width:350px;height:284px;margin:0;width:190px;border:2px solid #8b0000;" alt="Андрей Белый" onclick="showImg(this.src)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Andrei_Bely_in_Brussels_%281912%29.jpg" style="max-width:350px;height:284px;width:190px;border:2px solid #8b0000;" alt="Андрей Белый" onclick="showImg(this.src)">
   </div>
 </section>
 
@@ -143,7 +161,7 @@
   <p>Блок, Белый, Иванов. Их поэзия обращена к мистике, грядущей Вечной Женщине, гармонии мира и символам трансцендентного.</p>
   <button class="btn" onclick="openModal('blok')">Биография Блока</button>
   <div style="text-align:center; margin-top:20px;">
-    <img src="https://russkiymir.ru/upload/medialibrary/cc5/cc50403c909999582a3c5a16582d87aa.jpg" style="max-width:668px;height:528px;margin:0;width:344px;border:2px solid #8b0000;" alt="Александр Блок" onclick="showImg(this.src)">
+    <img src="https://russkiymir.ru/upload/medialibrary/cc5/cc50403c909999582a3c5a16582d87aa.jpg" style="max-width:668px;height:528px;width:344px;border:2px solid #8b0000;" alt="Александр Блок" onclick="showImg(this.src)">
   </div>
 </section>
 
@@ -153,8 +171,8 @@
   <button class="btn" onclick="openModal('skryabin')">Биография Скрябина</button>
   <button class="btn" onclick="openModal('vrubel')">Биография Врубеля</button>
   <div class="gallery">
-    <img src="https://www.mosconsv.ru/museum/images/236.jpg" style="max-width:400px;height:390px;margin:0;width:273px;border:2px solid #8b0000;" alt="Скрябин" onclick="showImg(this.src)">
-    <img src="https://24smi.org/public/media/celebrity/2023/03/17/cam4ugdgupgf-mikhail-vrubel.jpg" style="max-width:400px;height:416px;margin:0;width:312px;border:2px solid #8b0000;" alt="Врубель" onclick="showImg(this.src)">
+    <img src="https://www.mosconsv.ru/museum/images/236.jpg" style="max-width:400px;height:390px;width:273px;border:2px solid #8b0000;" alt="Скрябин" onclick="showImg(this.src)">
+    <img src="https://24smi.org/public/media/celebrity/2023/03/17/cam4ugdgupgf-mikhail-vrubel.jpg" style="max-width:400px;height:416px;width:312px;border:2px solid #8b0000;" alt="Врубель" onclick="showImg(this.src)">
   </div>
 </section>
 
@@ -190,10 +208,24 @@ function openModal(person) {
   content.innerHTML = html;
   modal.style.display='flex';
 }
-function closeModal() { document.getElementById('modalBg').style.display='none'; }
-function showImg(src) { document.getElementById('imgModalPic').src = src; document.getElementById('imgModal').style.display='flex'; }
-function closeImg() { document.getElementById('imgModal').style.display='none'; }
-function toggleNight() { document.body.classList.toggle('nightmode'); }
+
+function closeModal() {
+  document.getElementById('modalBg').style.display='none';
+}
+
+function showImg(src) {
+  document.getElementById('imgModalPic').src = src;
+  document.getElementById('imgModal').style.display='flex';
+}
+
+function closeImg() {
+  document.getElementById('imgModal').style.display='none';
+}
+
+function toggleNight() {
+  document.body.classList.toggle('nightmode');
+}
 </script>
+
 </body>
 </html>
